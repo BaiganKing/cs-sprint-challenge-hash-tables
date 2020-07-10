@@ -2,7 +2,16 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    occurrences = dict()
+
+    for array in arrays:
+        for number in array:
+            if number in occurrences:
+                occurrences[number] += 1
+            else:
+                occurrences[number] = 1
+
+    return [data[0] for data in occurrences.items() if data[1] == len(arrays)]
 
     return result
 
